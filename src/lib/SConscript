@@ -1,0 +1,10 @@
+Import('env')
+from ModuleUtils import *
+
+components = ['lib-demo']
+
+mod = Module('lib', env, components)
+mod.add_lib_into_list('lib-demo')
+lib = mod.build()
+
+Return ('lib')

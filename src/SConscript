@@ -1,0 +1,9 @@
+Import('env')
+from ModuleUtils import *
+
+components = ['modules', 'lib']
+
+mod = Module('src', env, components)
+lib = mod.build()
+
+Return ('lib')

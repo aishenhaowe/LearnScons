@@ -1,0 +1,12 @@
+Import('env')
+from ModuleUtils import *
+import os
+
+mod = Module('lib-demo', env)
+
+env.Append(CPPPATH = os.path.join(os.path.abspath('.'), 'private'))
+
+source_file = Glob(os.path.join('.', 'private', '*.c'))
+lib = env.StaticLibrary(source_file)
+
+Return ('lib')
